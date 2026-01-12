@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
-IS_M2RELEASEBUILD=$1
-POM_VERSION=$2
+IS_M2RELEASEBUILD=false
+POM_VERSION="1.0.0"
 
 MODULE="sequence-to-id"
 
