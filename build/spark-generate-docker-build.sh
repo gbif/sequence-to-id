@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 IS_M2RELEASEBUILD=false
-POM_VERSION="1.0.0"
+POM_VERSION="1.0.0-SNAPSHOT"
 
 MODULE="sequence-to-id"
 
