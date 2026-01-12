@@ -9,13 +9,13 @@ IMAGE=docker.gbif.org/${MODULE}:${POM_VERSION}
 IMAGE_LATEST=docker.gbif.org/${MODULE}:latest
 
 echo "Building Docker image: ${IMAGE}"
-docker build -f ./${MODULE}/docker/Dockerfile ./${MODULE} --build-arg JAR_FILE=${MODULE}-${POM_VERSION}.jar -t ${IMAGE}
+docker build -f ./docker/Dockerfile . --build-arg JAR_FILE=${MODULE}-${POM_VERSION}.jar -t ${IMAGE}
 
 echo "Pushing Docker image to the repository"
 docker push ${IMAGE}
 
 if [[ $IS_M2RELEASEBUILD = true ]]; then
-  echo "Updated latest tag poiting to the newly released ${IMAGE}"
+  echo "Updated latest tag pointing to the newly released ${IMAGE}"
   docker tag ${IMAGE} ${IMAGE_LATEST}
   docker push ${IMAGE_LATEST}
 fi
